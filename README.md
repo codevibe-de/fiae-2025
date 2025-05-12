@@ -1,3 +1,5 @@
-# fiae-2025
+# Ausbildung FIAE 2025
+
+Dozent: Thomas Auinger
 
 ## Testing Git!
