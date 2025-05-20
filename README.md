@@ -1,5 +1,4 @@
-# Ausbildung FIAE 2025
+# Ausbildung Fachinformatiker Anwendungsentwicklung (FIAE) 2025
 
 Dozent: Thomas Auinger
 
-## Testing Git!
