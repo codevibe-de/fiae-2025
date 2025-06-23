@@ -1,4 +1,4 @@
-import rich
+from rich import print as rprint
 
-rich.print("[bold green]Wow!![/bold green]")
-rich.print("Das ist ja [blue]cool![/blue]")
+rprint("[bold green]Wow!![/bold green]")
+rprint("Das ist ja [blue]cool![/blue]")
