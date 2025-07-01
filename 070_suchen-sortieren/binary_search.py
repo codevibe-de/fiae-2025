@@ -1,6 +1,3 @@
-zahlen = list(range(100000000))
-
-
 def binary_search(list, suchwert, i_min, i_max) -> int:
     '''
     Binary search returns the index of the wanted value, or -1 if not found.
@@ -16,5 +13,7 @@ def binary_search(list, suchwert, i_min, i_max) -> int:
         return binary_search(list, suchwert, i_middle + 1, i_max)
 
 
-idx = binary_search(zahlen, 590540, 0, len(zahlen) - 1)
+# zahlen = list(range(100000000))
+zahlen = [12, 33, 56, 79, 81, 82, 83, 99]
+idx = binary_search(zahlen, 83, 0, len(zahlen) - 1)
 print(idx)
