@@ -2,26 +2,20 @@ from zipp.glob import separate
 
 
 class produkt():
-    name:str
-    price:float
-    lager:int
     def __init__(self,name,price,lager):
         self.name=name
         self.price=price
         self.lager=lager
 
-class Warenkorb():
-    menge:int
-    def __init__(self,produkt:produkt,menge:int):
-        self.name=produkt.name
-        self.price=produkt.price
-        self.lager=produkt.lager
+class Warenkorb(produkt):
+    def __init__(self, name, price, lager,menge: int):
+        super().__init__(name, price, lager)
         self.menge=menge
     # def __init__(self,name,price,lager,menge):
     #     super().__init__(name,price,lager)
     #     self.menge=menge
     def lager_berechnung(self):
-        self.lager=self.lager-self.menge
+        self.lager-=self.menge
         return self.lager
 
 
@@ -41,11 +35,6 @@ class Bestellung():
 
 
 class Kunde():
-    vorname:str
-    nachname:str
-    adresse:str
-    hausnr:int
-    kreditkarte:str
     def __init__(self,vorname,name,adresse,hausnr,kreditkarte):
         self.bestellt:list = []
         self.vorname=vorname
@@ -64,8 +53,8 @@ class Kunde():
 
         return f"Kunde: {self.vorname}, {self.nachname} hat folgendes bestellt: {' '.join(self.bestellt)}"
 
-    def clear_history(self):
-        self.bestellt.clear()
+    def lieferadresse(self):
+        return f"{self.adresse}. {self.hausnr}"
 
 
 
@@ -76,13 +65,14 @@ class Kunde():
 
 
 
-kunde_1=Kunde("dennis","bogdanski","straße",1,"DE9500015436854")
-produkt_1=produkt("Buch",14.50,12)
-warenkorb_1=Warenkorb(produkt_1,6)
-warenkorb_2=Warenkorb(produkt_1,2)
+
+kunde_1=Kunde("dennis","bogdanski","Straße",1,"DE9500015436854")
+warenkorb_1=Warenkorb("Buch",14.50,18,6)
+warenkorb_2=Warenkorb("Flasche",5.0,32,12)
 bestellung_1=Bestellung(warenkorb_1,warenkorb_2)
 bestellung_2=Bestellung(warenkorb_1,warenkorb_1,warenkorb_2)
 print(kunde_1.bestell_history(bestellung_1,bestellung_2))
+
 
 
 
