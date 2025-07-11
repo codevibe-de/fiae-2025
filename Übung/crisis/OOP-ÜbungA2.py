@@ -10,7 +10,7 @@
 # °Überschreiben Sie die Methode in jeder Unterklasse mit spezifischem Verhalten
 # °Implementieren Sie Polymorphismus durch eine gemeinsame Methode fahrzeugInfo()
 
-
+#Abstract Base Class
 from abc import ABC, abstractmethod
 
 
